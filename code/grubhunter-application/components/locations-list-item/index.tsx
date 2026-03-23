@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { locationType } from '@/mongoose/locations/schema';
+import 'components/locations-list-item/index.module.css';
 
 interface PropsInterface {
     location: locationType;

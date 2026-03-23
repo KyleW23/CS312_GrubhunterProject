@@ -9,10 +9,9 @@ import dbConnect from '@/middleware/db-connect';
 import { locationType } from '@/mongoose/locations/schema';
 import { findAll } from '@/mongoose/locations/services';
 import LocationsList from '@/components/locations-list';
-import LocationsListItem from '@/components/locations-list-item';
 import Head from 'next/head';
 
-const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     let locations: locationType[] | [] = [];
     try {
         await dbConnect();
