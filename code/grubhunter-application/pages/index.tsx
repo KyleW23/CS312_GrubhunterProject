@@ -1,10 +1,4 @@
-import {
-    GetStaticProps,
-    GetStaticPropsContext,
-    InferGetStaticPropsType,
-    NextPage,
-    PreviewData,
-} from 'next';
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import dbConnect from '@/middleware/db-connect';
 import { locationType } from '@/mongoose/locations/schema';
 import { findAll } from '@/mongoose/locations/services';
