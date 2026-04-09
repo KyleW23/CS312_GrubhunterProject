@@ -4,6 +4,7 @@ import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 
 import { resolvers } from '@/graphql/locations/resolvers';
 import { typeDefs } from '@/graphql/locations/schema';
+import { getToken } from 'next-auth/jwt';
 
 const server = new ApolloServer<BaseContext>({
     resolvers,
@@ -11,10 +12,10 @@ const server = new ApolloServer<BaseContext>({
 });
 
 const handler = startServerAndCreateNextHandler(server, {
-    context: async () => {
-        const token = {};
+    context: async (req: NextApiRequest) => {
+        const token = await getToken({ req });
 
-        return token;
+        return { token };
     },
 });
 

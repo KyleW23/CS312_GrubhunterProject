@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 const AuthElement = () => {
     const { data: session, status } = useSession();
-    console.log(session, status);
     return (
         <>
             <div>
