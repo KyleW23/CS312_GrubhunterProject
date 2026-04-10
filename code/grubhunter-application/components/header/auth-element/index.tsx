@@ -18,12 +18,12 @@ const AuthElement = () => {
                                     '/list/' + session.user.fdlst_private_userId
                                 }
                             >
-                                <Button state='active' variant='default'>
+                                <Button disabled={false} variant='outline'>
                                     Wish List
                                 </Button>
                             </Link>
                             <Button
-                                state='active'
+                                disabled={false}
                                 variant='blue'
                                 clickHandler={() => signOut()}
                             >
@@ -34,7 +34,7 @@ const AuthElement = () => {
                 ) : (
                     <div>
                         <Button
-                            state='active'
+                            disabled={false}
                             variant='blue'
                             clickHandler={() => signIn()}
                         >

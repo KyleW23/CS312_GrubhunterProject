@@ -95,8 +95,8 @@ const LocationDetail = (props: PropsInterface) => {
                                     userId: session?.user.fdlst_private_userId,
                                 })
                             }
-                            state={loading ? 'disabled' : 'active'}
-                            variant={onWishlist ? 'default' : 'blue'}
+                            disabled={loading}
+                            variant={onWishlist ? 'outline' : 'blue'}
                         >
                             {onWishlist
                                 ? 'Remove from Wishlist'

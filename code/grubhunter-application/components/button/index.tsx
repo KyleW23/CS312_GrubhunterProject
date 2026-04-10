@@ -2,18 +2,23 @@ import React from 'react';
 import styles from '@/components/button/index.module.css';
 
 interface PropsInterface {
-    state: string;
-    children: string;
-    variant: string;
-    clickHandler?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    disabled: boolean;
+    children?: React.ReactNode;
+    variant?: 'blue' | 'outline';
+    clickHandler?: () => void;
 }
 
-const Button = ({ state, children, variant, clickHandler }: PropsInterface) => {
+const Button = ({
+    disabled,
+    children,
+    variant = 'blue',
+    clickHandler,
+}: PropsInterface) => {
     const helper = () => {
-        if (state === 'active') {
+        if (!disabled) {
             return (
                 <button
-                    className={`${styles.root} ${styles[state]} ${styles[variant]}`}
+                    className={`${styles.root} ${styles[variant]}`}
                     onClick={clickHandler}
                 >
                     {children}
@@ -21,7 +26,9 @@ const Button = ({ state, children, variant, clickHandler }: PropsInterface) => {
             );
         } else {
             return (
-                <button className={`${styles.root} ${state} ${variant}`}>
+                <button
+                    className={`${styles.root} ${styles.disabled} ${styles[variant]}`}
+                >
                     {children}
                 </button>
             );
