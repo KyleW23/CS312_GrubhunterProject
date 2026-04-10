@@ -18,5 +18,3 @@ const Logo = () => {
 };
 
 export default Logo;
-
-// Still need to do CONFIGURE step

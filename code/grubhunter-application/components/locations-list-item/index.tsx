@@ -8,7 +8,7 @@ interface PropsInterface {
 
 const LocationsListItem = (props: PropsInterface) => {
     return (
-        <li className={styles.root}>
+        <div className={styles.root}>
             <Link href={'/location/' + props.location.location_id}>
                 <div>
                     <h2>{props.location.name}</h2>
@@ -16,7 +16,7 @@ const LocationsListItem = (props: PropsInterface) => {
                     <p>Borough: {props.location.borough}</p>
                 </div>
             </Link>
-        </li>
+        </div>
     );
 };
 
